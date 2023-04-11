@@ -22,22 +22,24 @@ const Products = () => {
   },[])
 
   const productList = (products) => {
-    products!=null
-        ? products.map ((product) =>
-        <div>
+    
+    products!=null 
+      ? products.map((product) => 
+        <div key={product['_id']}>
           <h3>{product.title}</h3>
           <p>{product.description}</p>
           <h4>{product.price}</h4>
           <i>{product.stock}</i>
           <i>{product.category}</i>
           <img src={product.image} alt="" />
-        </div>
-        ) : <div>Error :c</div>
+        </div>)
+      : <div>Error :c</div>
   }
 
   return (
     <>
       {productList(products)}
+      <h1>Products goes here..</h1>
     </>
   )
 }
