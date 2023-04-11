@@ -10,16 +10,16 @@ import Root from './pages/Root';
 import Products from './pages/Products';
 import Product from './pages/Product';
 import Checkout from './pages/Checkout'
-import ManageProducts from './pages/ManageProducts';
-import ErrorPage from './pages/ErrorPage';
-import UpdateProduct from './pages/UpdateProduct';
-import CreateProduct from './pages/CreateProduct';
+import ManageProducts from './pages/admin/ManageProducts';
+// import ErrorPage from './pages/ErrorPage';
+import UpdateProduct from './pages/admin/UpdateProduct';
+import CreateProduct from './pages/admin/CreateProduct';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
-    errorElement: <ErrorPage />,
+    // errorElement: ,
     children: [
       {
         path: "/",
