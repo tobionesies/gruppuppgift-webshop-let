@@ -1,8 +1,11 @@
 import React from 'react'
+import Nav from '../components/Nav'
 
 const Header = () => {
   return (
-    <div>Header</div>
+    <header>
+      <Nav />
+    </header>
   )
 }
 
