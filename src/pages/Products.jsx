@@ -40,7 +40,7 @@ const Products = () => {
               <p>{product.stock}</p>
               <i>{product.category}</i>
               <Button>Add to cart</Button>
-              <Link to={"/"+product['_id']}>Description</Link>
+              <Link to={"/"+ product['_id']}>Description</Link>
               {/* ^ Ska ersättas med routing Link */}
             </ProductElement>)
           : <div>Error :c</div>
