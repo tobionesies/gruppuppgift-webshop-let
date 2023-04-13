@@ -7,12 +7,9 @@ import {Body, ProductElement, Button} from '../components/styled/StyledComponent
 
 const Products = () => {
 
+
   const [products, setProducts] = useState()
-  const [cartContent, setCartContent] = useState()
-
-  const params = useParams();
-
-
+  const [cartContent, setCartContent] = useState([])
 
   const fetchProducts = async () => {
     try {
@@ -33,25 +30,12 @@ const Products = () => {
   },[])
 
   const addToCart = (product) => {
-    const prod = {title: product.title, image: product.image, price: product.price}
-    setCartContent([...cartContent,
-                    prod
-      ])
-      console.log(prod)
-    // setCartContent(product.title, product.price)
-    // e.preventDefault();
-    // setCartContent(target._id)
-    // console.log('https://product-api-production-5f7f.up.railway.app/products/' + params._id)
+    setCartContent([
+      ...cartContent,
+      product
+    ])
+      console.log(cartContent)
   }
-
-
-  // const Cards = ({item, handleClick}) => {
-  //   const {
-  //     title,
-  //     price,
-  //     image,
-  //   } = item
-  // }
 
 
   return (
@@ -59,9 +43,13 @@ const Products = () => {
     <div>
       <ul>
         {
-          // cartContent.map((item) =>{
-
-          // })
+          cartContent.map(item =>
+            <li key={item._id}>
+              <img src={item.image} alt="" />
+              {item.title}
+              {item.price}
+            </li>
+          )
         }
       </ul>
     </div>
@@ -74,7 +62,7 @@ const Products = () => {
               <h4>{product.price}</h4>
               <p>{product.stock}</p>
               <i>{product.category}</i>
-              <Button onClick={() => { addToCart(product)}}>Add to cart</Button>
+              <Button onClick={() => { addToCart({title: product.title,image: product.image,price: product.price})}}>Add to cart</Button>
               <Link to={"/"+ product['_id']}>Description</Link>
               {/* ^ Ska ersättas med routing Link */}
             </ProductElement>)
