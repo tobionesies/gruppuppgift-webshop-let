@@ -21,29 +21,7 @@ const ManageProducts = () => {
 
   useEffect(() => {
     fetchProducts();
-    
   },[])
-
-
-
-const deleteobj =  async (id) =>{
-try{
-  await fetch ('https://product-api-production-5f7f.up.railway.app/products/' + id, { 
-  method:'DELETE',
-
-});
-   setProducts(products.filter(product => id != product['_id']));
-
-  } catch(error){
-    console.log("problem occured")
-  }
-    
-}
-
-
-
-
-
 
   return (
     <>
@@ -72,7 +50,7 @@ try{
                   <Link to={"/update-product/"+product['_id']}>
                     <button>Update</button>
                   </Link>
-                  <button onClick={() => { deleteobj(product['_id']) }}>Delete</button>
+                  <button>Delete</button>
                 </td>
                 {/* ^ Ska ersättas med routing Link */}
               </tr>)
