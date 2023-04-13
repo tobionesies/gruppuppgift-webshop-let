@@ -21,35 +21,63 @@ const ManageProducts = () => {
 
   useEffect(() => {
     fetchProducts();
+    
   },[])
+
+
+
+const deleteobj =  async (id) =>{
+try{
+  await fetch ('https://product-api-production-5f7f.up.railway.app/products/' + id, { 
+  method:'DELETE',
+
+});
+   setProducts(products.filter(product => id != product['_id']));
+
+  } catch(error){
+    console.log("problem occured")
+  }
+    
+}
+
+
+
+
+
 
   return (
     <>
-      <Link to="/create-product/">Create product</Link>
+      <Link to="/create-product/">
+        <button>Create product</button>
+      </Link>
       <table>
-        <tr>
-          <th>Title</th>
-          <th>Price</th>
-          <th>Stock</th>
-          <th>Category</th>
-          <th>Action</th>
-        </tr>
-        { products!=null 
-          ? products.map((product) => 
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Price</th>
+            <th>Stock</th>
+            <th>Category</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          { products!=null 
+            ? products.map((product) => 
             <tr key={product['_id']}>
-              <td>{product.title}</td>
-              <td>{product.price}</td>
-              <td>{product.stock}</td>
-              <td>{product.category}</td>
-              <td>
-                <Link to={"/update-product/"+product['_id']}>
-                  <button>Update</button>
-                </Link>
-                <button>Delete</button>
-               </td>
-              {/* ^ Ska ersättas med routing Link */}
-            </tr>)
-          : <div>Error :c</div>}
+                <td>{product.title}</td>
+                <td>{product.price}</td>
+                <td>{product.stock}</td>
+                <td>{product.category}</td>
+                <td>
+                  <Link to={"/update-product/"+product['_id']}>
+                    <button>Update</button>
+                  </Link>
+                  <button onClick={() => { deleteobj(product['_id']) }}>Delete</button>
+                </td>
+                {/* ^ Ska ersättas med routing Link */}
+              </tr>)
+            : <div>Error :c</div>}
+        </tbody>
       </table>
     </>
   )
