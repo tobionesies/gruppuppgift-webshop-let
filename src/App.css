@@ -1,42 +1,56 @@
-/* #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+h1{
+  color:black;
+  font-size:2.2vw;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.product-image{
+  max-width:30vw;
+  max-height:40vw;
+  position:fixed;
+ 
+
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.item-container{
+  max-width:80%;
+  margin:100px;
+  padding:50px;
+  position: relative;
+  left:3%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  
+  
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.descryption{
+  float:right;
+  position:static;
+  max-width:40%;
+  height:auto;
+  margin-left:54%;
+  
 }
 
-.card {
-  padding: 2em;
+.cart{
+margin-top:10px;
+display: block;
+padding:8px;
+font-family: arial;
+font-weight: 600;
+border-width: 2px;
+border-image: linear-gradient(to right, darkblue, rgb(150, 9, 9)) 1;
+
 }
 
-.read-the-docs {
-  color: #888;
-} */
+.input{
+  width:70%;
+  border:1px solid black;
+  padding:5px;
+  border-radius: 5px;
+}
+
+p {
+font-size:1.1vw;
+}
