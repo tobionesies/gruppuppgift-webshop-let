@@ -19,7 +19,12 @@ const Productfunction = () => {
       }
     }
   
-  let valör = "kr"
+  const valör = "kr"
+  const price = "pris:"
+  const lager = "stock:"
+  const pack = "pc."
+  const besk = "descryption:"
+  const cat = "categories:"
 
 useEffect(() => {
   Fetchproduct()
@@ -33,12 +38,14 @@ useEffect(() => {
 
 <div className='descryption'>
 <h1>{item.title}</h1>
-<p>{item.price} {valör}</p>
-<input type="text" value={item.stock}></input>
-
+<p><b>{price}</b> {item.price} {valör}</p>
+<input type="text" className='input'></input>
+<button className='cart'>Add to Cart</button>
+<p><b>{lager}</b> {item.stock} {pack}</p>
+<p><b>{besk}</b><br/>{item.description}</p>
+<p><b>{cat}</b> <br/>{item.category}</p>
 </div>
-<img src={item.image}></img>
-<button>Add to cart</button>
+<img src={item.image} className='product-image'></img>
     </div>
    
   )
