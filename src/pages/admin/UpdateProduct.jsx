@@ -37,8 +37,6 @@ const UpdateProduct = () => {
 
   const handleChange = (e) => {
     e.preventDefault();
-    console.log(e.target.name)
-    console.log(e.target.value)
     setProduct({
       ...product,
       [e.target.name]: e.target.value
