@@ -42,7 +42,9 @@ const ManageProducts = () => {
               <td>{product.stock}</td>
               <td>{product.category}</td>
               <td>
-                <Link to={"/update-product/"+product['_id']}>Update</Link>
+                <Link to={"/update-product/"+product['_id']}>
+                  <button>Update</button>
+                </Link>
                 <button>Delete</button>
                </td>
               {/* ^ Ska ersättas med routing Link */}
