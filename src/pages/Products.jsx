@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import styled, { css } from 'styled-components'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
+// import "../components/Cart"
 import {Body, ProductElement, Button} from '../components/styled/StyledComponents';
 
 
 const Products = () => {
 
+
   const [products, setProducts] = useState()
+  const [cartContent, setCartContent] = useState([])
 
   const fetchProducts = async () => {
     try {
@@ -26,10 +29,30 @@ const Products = () => {
     fetchProducts();
   },[])
 
-
+  const addToCart = (product) => {
+    setCartContent([
+      ...cartContent,
+      product
+    ])
+      console.log(cartContent)
+  }
 
 
   return (
+    <>
+    <div>
+      <ul>
+        {
+          cartContent.map(item =>
+            <li key={item._id}>
+              <img src={item.image} alt="" />
+              {item.title}
+              {item.price}
+            </li>
+          )
+        }
+      </ul>
+    </div>
     <Body>
       { products!=null 
           ? products.map((product) => 
@@ -39,13 +62,14 @@ const Products = () => {
               <h4>{product.price}</h4>
               <p>{product.stock}</p>
               <i>{product.category}</i>
-              <Button>Add to cart</Button>
+              <Button onClick={() => { addToCart({title: product.title,image: product.image,price: product.price})}}>Add to cart</Button>
               <Link to={"/"+ product['_id']}>Description</Link>
               {/* ^ Ska ersättas med routing Link */}
             </ProductElement>)
           : <div>Error :c</div>
       }
     </Body>
+    </>
   )
 }
 
