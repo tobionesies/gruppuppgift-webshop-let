@@ -3,8 +3,9 @@ import styled, { css } from 'styled-components'
 export const Button = styled.button`
 background: transparent;
 border-radius: 3px;
-border: 2px solid palevioletred;
-color: palevioletred;
+border: 2px solid var(--Dark-gray);
+color: var(--Dark-gray);
+font-weight: 700;
 margin: 0 1em;
 padding: 0.25em 1em;`
 
@@ -12,7 +13,7 @@ export const Body = styled.div`
 display: grid;
 grid-template-columns: 1fr 1fr 1fr 1fr;
 gap: 20px;
-background-color: white;
+background-color: var(--Baby-powder);
 padding: 20px 20px 20px 20px;
 /* margin-bottom: 20px; */
 
@@ -30,10 +31,12 @@ padding: 20px 20px 20px 20px;
 export const ProductElement = styled.div`
 display: flex;
 min-width: 200px;
-background: #e2e2e2;
+background: var(--Battleship-gray);
 padding: 20px;
 flex-flow: row wrap;
 border-radius: 20px;
+border: 0.5px solid #bdbdb4;
+box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
 img{
   margin: 10px auto;
@@ -52,6 +55,7 @@ img{
 }
 //title
 h3{
+  color: #242424;
   font-size: 24px;
   margin-bottom: 0;
   display: block;
@@ -64,6 +68,7 @@ i{
 //price
 h4{
   margin-bottom: 0;
+  color: var(--Vermilion)
 }
 //stock
 p{
@@ -73,9 +78,11 @@ p{
 //description
 a{
   margin-bottom: 15px;
+  color: var(-);
 }
 //addToCartBtn
 button:hover{
-  background-color: black;
+  background-color: var(--Dark-gray);
+  color: var(--Baby-powder);
 }
 `

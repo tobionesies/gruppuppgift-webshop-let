@@ -63,7 +63,7 @@ const Products = () => {
               <div className='info'>
                 <h4>${product.price}</h4>
                 <p>In stock</p>
-                <input value={product.stock} type="text" />
+                {/* <input value={product.stock} type="text" /> */}
               <Link to={"/"+ product['_id']}>Description</Link>
               <Button onClick={() => { addToCart({title: product.title,image: product.image,price: product.price})}}>Add to cart</Button>
               </div>

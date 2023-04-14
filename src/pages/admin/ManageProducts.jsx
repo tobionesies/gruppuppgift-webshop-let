@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
+import {StyledManageProducts} from '/src/components/styled/StyledManageProducts'
+
 
 const ManageProducts = () => {
 
@@ -47,38 +49,40 @@ try{
 
   return (
     <>
-      <Link to="/create-product/">
-        <button>Create product</button>
-      </Link>
-      <table>
-        <thead>
-          <tr>
-            <th>Title</th>
-            <th>Price</th>
-            <th>Stock</th>
-            <th>Category</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          { products!=null 
-            ? products.map((product) => 
-            <tr key={product['_id']}>
-                <td>{product.title}</td>
-                <td>{product.price}</td>
-                <td>{product.stock}</td>
-                <td>{product.category}</td>
-                <td>
-                  <Link to={"/update-product/"+product['_id']}>
-                    <button>Update</button>
-                  </Link>
-                  <button onClick={() => { deleteobj(product['_id']) }}>Delete</button>
-                </td>
-                {/* ^ Ska ersättas med routing Link */}
-              </tr>)
-            : <div>Error :c</div>}
-        </tbody>
-      </table>
+      <StyledManageProducts>
+        <Link to="/create-product/">
+          <button className='create'>Create product</button>
+        </Link>
+        <table>
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Price</th>
+              <th>Stock</th>
+              <th>Category</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            { products!=null 
+              ? products.map((product) => 
+              <tr key={product['_id']}>
+                  <td>{product.title}</td>
+                  <td>{product.price}</td>
+                  <td>{product.stock}</td>
+                  <td>{product.category}</td>
+                  <td className='tableData'>
+                    <Link to={"/update-product/"+product['_id']} >
+                      <button className='update' >Update</button>
+                    </Link>
+                    <button onClick={() => { deleteobj(product['_id']) }} className='delete'>Delete</button>
+                  </td>
+                  {/* ^ Ska ersättas med routing Link */}
+                </tr>)
+              : <div>Error :c</div>}
+          </tbody>
+        </table>
+      </StyledManageProducts>
     </>
   )
 }
