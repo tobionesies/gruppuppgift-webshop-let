@@ -1,7 +1,7 @@
 import styled, {css} from 'styled-components'
 
 export const StyledHeader = styled.header`
-background-color: #242424;
+background-color: var(--Dark-gray);
 padding: 40px 60px;
 
 nav {

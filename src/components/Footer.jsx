@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <>
     <StyledFooter>
-      Footer
+      <p className='footerInfo'>Brought to you by Team LET ✌</p>
     </StyledFooter>
     </>
   )
