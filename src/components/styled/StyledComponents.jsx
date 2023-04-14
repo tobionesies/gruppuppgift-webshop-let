@@ -31,11 +31,12 @@ padding: 20px 20px 20px 20px;
 export const ProductElement = styled.div`
 display: flex;
 min-width: 200px;
-background: var(--Battleship-gray);
+background: white;
+/* background: var(--Battleship-gray); */
 padding: 20px;
 flex-flow: row wrap;
 border-radius: 20px;
-border: 0.5px solid #bdbdb4;
+/* border: 0.5px solid #bdbdb4; */
 box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
 img{
@@ -78,9 +79,16 @@ p{
 //description
 a{
   margin-bottom: 15px;
-  color: var(-);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--Dark-gray)
 }
 //addToCartBtn
+button {
+  border-radius: 10px;
+  padding: 5px;
+}
+
 button:hover{
   background-color: var(--Dark-gray);
   color: var(--Baby-powder);

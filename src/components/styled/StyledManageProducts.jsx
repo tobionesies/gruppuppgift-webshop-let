@@ -57,16 +57,23 @@ export const StyledManageProducts = styled.div`
         padding: 5px;
     }
 
+    .create:hover{
+        cursor: pointer;
+        background-color: var(--Dark-gray);
+        color: var(--Baby-powder);
+    }
+
     .update {
         background-color: var(--Baby-powder);
-        color: #33b943;
-        border: #33b943 1px solid;
+        color: #1e6d27;
+        border: #1e6d27 1px solid;
     }
 
     .update:hover{
-        background-color: #33b943;
+        cursor: pointer;
+        background-color: #1e6d27;
         color: white;
-        border: #33b943 1px solid;
+        border: #1e6d27 1px solid;
     }
 
     .delete {
@@ -76,6 +83,7 @@ export const StyledManageProducts = styled.div`
     }
 
     .delete:hover {
+        cursor: pointer;
         background-color: var(--Vermilion);
         color: white;
         border: var(--Vermilion) 1px solid;

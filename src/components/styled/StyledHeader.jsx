@@ -15,6 +15,10 @@ nav {
         text-decoration: none;
     }
 
+    a:hover{
+        text-decoration: underline;
+    }
+
    
 }
 `
