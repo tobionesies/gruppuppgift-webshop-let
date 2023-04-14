@@ -2,7 +2,7 @@ import styled, {css} from 'styled-components'
 
 export const StyledManageProducts = styled.div`
 
-    background-color: #c0c0c0;
+    /* background-color: #c0c0c0; */
     padding: 20px 50px 50px 50px;
 
     table {
@@ -11,6 +11,7 @@ export const StyledManageProducts = styled.div`
         background-color: white;
         border-collapse: collapse;
         border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
         }
 
         
@@ -50,8 +51,8 @@ export const StyledManageProducts = styled.div`
         background-color: var(--Baby-powder);
         font-weight: 600;
         margin-bottom: 20px;
-        color: #509ebd;
-        border: #509ebd 2px solid;
+        color: var(--Dark-gray);
+        border: var(--Dark-gray) 2px solid;
         border-radius: 5px;
         padding: 5px;
     }

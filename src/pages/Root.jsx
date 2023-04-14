@@ -3,7 +3,7 @@ import Footer from '../components/Footer'
 import { Outlet } from 'react-router-dom'
 import Header from '../components/Header'
 import Cart from '../components/Cart'
-import { GlobalStyle } from '../components/styled/GlobalStyle'
+import { GlobalStyle, StyledSection } from '../components/styled/GlobalStyle'
 
 
 
@@ -13,9 +13,9 @@ const Root = () => {
       <GlobalStyle/>
         <Header />
         <Cart />
-        <section>
+        <StyledSection>
             <Outlet />
-        </section>
+        </StyledSection>
         <Footer />
     </div>  
   )
