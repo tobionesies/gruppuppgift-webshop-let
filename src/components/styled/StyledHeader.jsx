@@ -10,7 +10,6 @@ nav {
     justify-content: space-between;
 
     a {
-        font-family: 'Quicksand';
         font-size: 19px;
         color: white;
         text-decoration: none;

@@ -58,12 +58,15 @@ const Products = () => {
           ? products.map((product) => 
             <ProductElement key={product['_id']}>
               <img src={product.image} alt="BILD" />
-              <h3>{product.title}</h3>
-              <h4>{product.price}</h4>
-              <p>{product.stock}</p>
-              <i>{product.category}</i>
-              <Button onClick={() => { addToCart({title: product.title,image: product.image,price: product.price})}}>Add to cart</Button>
+                <h3>{product.title}</h3>
+                <i>{product.category}</i>
+              <div className='info'>
+                <h4>${product.price}</h4>
+                <p>In stock</p>
+                <input value={product.stock} type="text" />
               <Link to={"/"+ product['_id']}>Description</Link>
+              <Button onClick={() => { addToCart({title: product.title,image: product.image,price: product.price})}}>Add to cart</Button>
+              </div>
               {/* ^ Ska ersättas med routing Link */}
             </ProductElement>)
           : <div>Error :c</div>
