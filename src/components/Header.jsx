@@ -1,11 +1,12 @@
 import React from 'react'
 import Nav from '../components/Nav'
+import {StyledHeader} from './styled/StyledHeader'
 
 const Header = () => {
   return (
-    <header>
+    <StyledHeader>
       <Nav />
-    </header>
+    </StyledHeader>
   )
 }
 
