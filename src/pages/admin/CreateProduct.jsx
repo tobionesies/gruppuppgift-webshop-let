@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { StyledCreateForm } from '../../components/styled/StyledForms';
 
 const CreateProduct = () => {
   const navigate = useNavigate()
@@ -45,7 +46,7 @@ const CreateProduct = () => {
     }}
 
   return (
-    <form onSubmit={handleSubmit}>
+    <StyledCreateForm onSubmit={handleSubmit}>
       <h2>Create product</h2>
       <h3>Title</h3>
       <input name='title' type="text" onChange={handleChange} />
@@ -62,7 +63,7 @@ const CreateProduct = () => {
       <br />
       <br />
       <input type="submit" />
-    </form>
+    </StyledCreateForm>
   )
 }
 
