@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import { useParams, useNavigate } from 'react-router-dom';
+import { StyledUpdateForm } from '../../components/styled/StyledForms';
 
 
 const UpdateProduct = () => {
@@ -70,8 +71,8 @@ const UpdateProduct = () => {
 
   return (
     <div>
-      <h2>Update Product</h2>
-      <form action="" onSubmit={handleSubmit} >
+      <StyledUpdateForm action="" onSubmit={handleSubmit} >
+        <h2>Update Product</h2>
         <h3>Title</h3>
         <input 
          name="title" 
@@ -116,7 +117,7 @@ const UpdateProduct = () => {
          />
          <br />
          <input type="submit" value="Submit"/>
-      </form>
+      </StyledUpdateForm>
 
     </div>
   )

@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 
 
 export const GlobalStyle = createGlobalStyle`
@@ -9,6 +9,11 @@ export const GlobalStyle = createGlobalStyle`
     --Green: #75bb4f;
     --Dark-gray: #26403C;
   }
+`
+
+export const StyledSection = styled.section`
+background-color: var(--Baby-powder);
+padding: 20px 0;
 `
 
 
