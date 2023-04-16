@@ -9,6 +9,14 @@ body {
 }
 
 
+/* Ändra till styled-fil */
+.cartImage{
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+}
+
+
 
 /* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
