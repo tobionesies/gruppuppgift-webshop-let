@@ -10,6 +10,7 @@ const Products = () => {
 
   const [products, setProducts] = useState()
   const [cartContent, setCartContent] = useState([])
+  const [quantity, setQuantity] = useState(1)
 
   const fetchProducts = async () => {
     try {
@@ -29,29 +30,60 @@ const Products = () => {
     fetchProducts();
   },[])
 
+  const handleChange = (e) => {
+    e.preventDefault();
+    setQuantity(e.target.value)
+
+    if (e.target.value == "") {
+      setQuantity(1)
+    }
+
+  }
+
   const addToCart = (product) => {
     setCartContent([
       ...cartContent,
       product
     ])
       console.log(cartContent)
-  }
+    }
+    
+    const total = cartContent.reduce((result, currentProduct) => {
+      return result += currentProduct.price * currentProduct.quantity;
+    }, 0)
 
 
-  return (
-    <>
+    
+    return (
+      <>
     <div>
-      <ul>
+      <table className='cartTable'>
+          <thead>
+          <tr>
+          <th></th>
+          <th>Title</th>
+          <th>Quantity</th>
+          <th>Price</th>
+        </tr>
+          </thead>
+        <tbody>
         {
           cartContent.map(item =>
-            <li key={item._id}>
-              <img src={item.image} alt="" />
-              {item.title}
-              {item.price}
-            </li>
+            <tr key={item.id}>
+              <td><img src={item.image} alt="" className='cartImage'/></td>
+              <td>{item.title}</td>
+              <td>{item.quantity}</td>
+              <td>${item.price}</td>
+            </tr>
           )
         }
-      </ul>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td>Total: ${total}</td>
+          </tr>
+        </tfoot>
+      </table>
     </div>
     <Body>
       { products!=null 
@@ -63,9 +95,16 @@ const Products = () => {
               <div className='info'>
                 <h4>${product.price}</h4>
                 <p>In stock</p>
-                {/* <input value={product.stock} type="text" /> */}
+                <input name="quantity" placeholder='1' value={product.quantity} type="text" onChange={handleChange} />
               <Link to={"/"+ product['_id']}>Description</Link>
-              <Button onClick={() => { addToCart({title: product.title,image: product.image,price: product.price})}}>Add to cart</Button>
+              <Button onClick={(e) => { addToCart({
+                  id: product._id,
+                  title: product.title,
+                  image: product.image,
+                  price: product.price,
+                  quantity: quantity,
+                  })
+                }}>Add to cart</Button>
               </div>
               {/* ^ Ska ersättas med routing Link */}
             </ProductElement>)
