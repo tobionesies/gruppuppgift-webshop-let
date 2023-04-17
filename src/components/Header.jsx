@@ -2,10 +2,10 @@ import React from 'react'
 import Nav from '../components/Nav'
 import {StyledHeader} from './styled/StyledHeader'
 
-const Header = (cartToggle) => {
+const Header = (cartToggle, updateCartState) => {
   return (
     <StyledHeader>
-      <Nav cartToggle={cartToggle}/>
+      <Nav cartToggle={cartToggle}  updateCartState={()=> {updateCartState()}}/>
     </StyledHeader>
   )
 }
