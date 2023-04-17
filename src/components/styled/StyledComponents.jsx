@@ -41,7 +41,8 @@ box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
 img{
   margin: 10px auto;
-  border: 20px solid white;
+  border: 1px solid white;
+  margin-left:25px;
   border-radius: 10px;
   background-color: white;
   width: 180px;
@@ -96,4 +97,3 @@ button:hover{
 
 
 `
-
