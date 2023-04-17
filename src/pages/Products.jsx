@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import styled, { css } from 'styled-components'
-import { Link, useParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 // import "../components/Cart"
 import {Body, ProductElement, Button} from '../components/styled/StyledComponents';
+import { motion } from 'framer-motion'
 
 
 const Products = () => {
-
 
   const [products, setProducts] = useState()
   const [cartContent, setCartContent] = useState([])
@@ -89,7 +89,23 @@ const Products = () => {
       { products!=null 
           ? products.map((product) => 
             <ProductElement key={product['_id']}>
+              <motion.div
+              
+               transition={{
+              duration:2,
+              type:"spring",
+              stiffness: 200
+         
+               }}
+
+               whileHover={{
+                scale:1.1,
+               }}
+                 
+               
+              >
               <img src={product.image} alt="BILD" />
+              </motion.div>
                 <h3>{product.title}</h3>
                 <i>{product.category}</i>
               <div className='info'>
@@ -105,6 +121,7 @@ const Products = () => {
                   quantity: quantity,
                   })
                 }}>Add to cart</Button>
+            
               </div>
               {/* ^ Ska ersättas med routing Link */}
             </ProductElement>)
