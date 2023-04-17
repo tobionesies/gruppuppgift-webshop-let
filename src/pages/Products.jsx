@@ -52,11 +52,11 @@ const Products = () => {
       return result += currentProduct.price * currentProduct.quantity;
     }, 0)
 
-
+    const cartToggle = false;
     
     return (
       <>
-    <div>
+      {cartToggle != true ? <div></div> : <div>
       <table className='cartTable'>
           <thead>
           <tr>
@@ -84,7 +84,7 @@ const Products = () => {
           </tr>
         </tfoot>
       </table>
-    </div>
+    </div>}
     <Body>
       { products!=null 
           ? products.map((product) => 
