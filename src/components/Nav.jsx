@@ -5,9 +5,12 @@ import { FaShoppingCart } from "react-icons/Fa";
 import { useState } from 'react';
 
 
-const Nav = () => {
+const Nav = ({cartToggle, setCartToggle}) => {
 
-const [cartClicked, setCartClicked] = useState(false);
+ [cartToggle, setCartToggle] = useState(false);
+
+
+console.log(cartToggle)
 
   return (
     <motion.nav
@@ -29,7 +32,7 @@ const [cartClicked, setCartClicked] = useState(false);
 >
       <Link to="/">Products</Link>
       <Link to="/manage-products">Admin</Link>
-      <h2 className='cart-icon'onClick={() => {setCartClicked(!cartClicked)}}><FaShoppingCart/> (0 {cartClicked == true ? "true" : "false"})</h2> 
+      <h2 className='cart-icon' onClick={() => {cartToggle == false ? setCartToggle(true) : setCartToggle(false)}}><FaShoppingCart/> (0 {cartToggle == true ? "true" : "false"})</h2> 
     </motion.nav>
   )
 }
