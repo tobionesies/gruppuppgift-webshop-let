@@ -3,11 +3,16 @@ import Nav from '../components/Nav'
 import {StyledHeader} from './styled/StyledHeader'
 import Cart from './Cart'
 
-const Header = ({cartToggle, setCartToggle, cartContent}) => {
+const Header = ({cartToggle, setCartToggle, cartContent, setCartContent}) => {
   return (
     <StyledHeader>
       <Nav />
-      <Cart cartToggle={cartToggle} setCartToggle={setCartToggle} cartContent={cartContent}/>
+      <Cart 
+        cartToggle={cartToggle} 
+        setCartToggle={setCartToggle} 
+        cartContent={cartContent}
+        setCartContent={setCartContent}
+      />
     </StyledHeader>
   )
 }

@@ -3,10 +3,8 @@ import { Link, useOutletContext } from 'react-router-dom'
 import "../pages/Products"
 import { FaShoppingCart } from "react-icons/Fa";
 
-const Cart = ({cartToggle, setCartToggle, cartContent}) => {
+const Cart = ({cartToggle, setCartToggle, cartContent, setCartContent}) => {
   [cartToggle, setCartToggle]   = useState();
-
-  let nCart= [];
 
   const handleChange = (e) => {
     e.preventDefault();
@@ -15,12 +13,13 @@ const Cart = ({cartToggle, setCartToggle, cartContent}) => {
   }
 
   const total = cartContent.reduce((result, currentProduct) => {
-    return result += currentProduct.price * currentProduct.quantity;
+    return result += currentProduct.price;
   }, 0)
 
-  function checkAvailability(cartContent, id) {
-    return cartContent.some((itemID) => id === itemID);
-  }
+
+const removeFromCart = (id) => {
+  setCartContent(cartContent.filter(item => id != item.id));
+}
 
   return (
     <>
@@ -42,21 +41,21 @@ const Cart = ({cartToggle, setCartToggle, cartContent}) => {
                   <th>Title</th>
                   <th>Quantity</th>
                   <th>Price</th>
+                  <th>Action</th>
                 </tr>
               </thead>
               <tbody>
-
-                {cartContent.map((item) => console.log(cartContent.find(item.id)))}
               {
-                cartContent.map((item, key) =>
-                  item.id == key
-                    ? item.quantity += item.quantity
-                    : <tr key={item.id}>
-                       <td><img src={item.image} alt="" className='cartImage'/></td>
-                       <td>{item.title}</td>
-                       <td>{item.quantity}</td>
-                       <td>${item.price}</td>
-                     </tr>)
+                cartContent.map((item) =>
+                  <tr key={item.id}>
+                    <td><img src={item.image} alt="" className='cartImage'/></td>
+                    <td>{item.title}</td>
+                    <td>x{item.quantity}</td>
+                    <td>${item.price}</td>
+                    <td>
+                      <button onClick={() => { removeFromCart(item.id)}}>X</button>
+                    </td>
+                  </tr>)
               }
               </tbody>
               <tfoot>

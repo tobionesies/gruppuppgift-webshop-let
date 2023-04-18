@@ -12,7 +12,12 @@ const Root = () => {
   return (
     <div>
       <GlobalStyle/>
-        <Header cartToggle={cartToggle} setCartToggle={setCartToggle} cartContent={cartContent} />
+        <Header 
+          cartToggle={cartToggle} 
+          setCartToggle={setCartToggle} 
+          cartContent={cartContent}
+          setCartContent={setCartContent}
+         />
         <StyledSection>
             <Outlet context={[cartContent, setCartContent]}/>
             {/* <Outlet /> */}
