@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import {Body, ProductElement, Button} from '../components/styled/StyledComponents';
 import { motion } from 'framer-motion'
+import Product from '../components/Product';
 
 
-const Products = ({addToCart}) => {
+const Products = ({addToCart, testing}) => {
 
   const [products, setProducts]       = useState()
   const [cartContent, setCartContent] = useState([])
@@ -26,14 +27,7 @@ const Products = ({addToCart}) => {
     fetchProducts();
   },[])
 
-  const handleChange = (e) => {
-    e.preventDefault();
-    setQuantity(e.target.value)
 
-    if (e.target.value == "") {
-      setQuantity(1)
-    }
-  }
 
   // const addToCart = (product) => {
   //   setCartContent([
@@ -46,39 +40,19 @@ const Products = ({addToCart}) => {
     return (
       <>
         <Body>
+          {testing}
           { products!=null 
               ? products.map((product) => 
-                <ProductElement key={product['_id']}>
-                  <motion.div
-                    transition={{
-                      duration:2,
-                      type:"spring",
-                      stiffness: 200
-                    }}
-                    whileHover={{ scale:1.1 }}
-                  >
-                  <img src={product.image} alt="BILD" />
-                  </motion.div>
-                    <h3>{product.title}</h3>
-                    <i>{product.category}</i>
-                  <div className='info'>
-                    <h4>${product.price}</h4>
-                    <p>In stock</p>
-                    <input name="quantity" placeholder='1' value={product.quantity} type="text" onChange={handleChange} />
-                  <Link to={"/"+ product['_id']}>Description</Link>
-                  <Button onClick={() => { addToCart({
-                      id: product._id,
-                      title: product.title,
-                      image: product.image,
-                      price: product.price,
-                      quantity: quantity,
-                      })
-                    }}>Add to cart</Button>
-                
-                  </div>
-                  {/* ^ Ska ersättas med routing Link */}
-                </ProductElement>)
+                <Product 
+                  key={product['_id']}
+                  product={product}
+                  quantity={quantity}
+                  setQuantity={setQuantity}
+                  addToCart={() => {addToCart()}}
+                  /> 
+               )
               : <div>Error :c</div>
+          
           }
         </Body>
       </>
