@@ -4,7 +4,7 @@ import {Body, ProductElement, Button} from '../components/styled/StyledComponent
 import { motion } from 'framer-motion'
 
 
-const Products = () => {
+const Products = ({addToCart}) => {
 
   const [products, setProducts]       = useState()
   const [cartContent, setCartContent] = useState([])
@@ -35,13 +35,13 @@ const Products = () => {
     }
   }
 
-  const addToCart = (product) => {
-    setCartContent([
-      ...cartContent,
-      product
-    ])
-      console.log(cartContent)
-  }
+  // const addToCart = (product) => {
+  //   setCartContent([
+  //     ...cartContent,
+  //     product
+  //   ])
+  //     console.log(cartContent)
+  // }
     
     return (
       <>
@@ -66,7 +66,7 @@ const Products = () => {
                     <p>In stock</p>
                     <input name="quantity" placeholder='1' value={product.quantity} type="text" onChange={handleChange} />
                   <Link to={"/"+ product['_id']}>Description</Link>
-                  <Button onClick={(e) => { addToCart({
+                  <Button onClick={() => { addToCart({
                       id: product._id,
                       title: product.title,
                       image: product.image,
