@@ -4,29 +4,27 @@ import { StyledUpdateForm } from '../../components/styled/StyledForms';
 
 
 const UpdateProduct = () => {
-  const [product, setProduct] = useState(
-    {title:"", 
-    description:"", 
-    price:0, 
-    stock:0, 
-    category:"",
-    image:"",
-    }
-    );
+  const [product, setProduct] = useState({
+    title: "", 
+    description: "", 
+    price: 0, 
+    stock: 0, 
+    category: "",
+    image: "",
+    });
+
   const params = useParams();
   const navigate = useNavigate();
 
   const fetchProduct = async () => {
     try {
       const response = await fetch (`https://product-api-production-5f7f.up.railway.app/products/${params.id}`)
-      // const response = await fetch (`https://product-api-production-5f7f.up.railway.app/products/642c145245ec5384f181f1e2`)
+      
       const product = await response.json();
       setProduct(product)
-      // console.log(product.title)
 
       return product
-      // if(!response.ok) {
-      //   throw new Error('Could not fetch the data')} 
+
     } catch (error) {
       setDefaultResultOrder(error.message)
     }
@@ -55,15 +53,16 @@ const UpdateProduct = () => {
         },
         body: JSON.stringify(
           {
-            title:product.title,
-            description:product.description,
-            price:product.price,
-            stock:product.stock,
-            category:product.category,
-            image:product.image
+            title:       product.title,
+            description: product.description,
+            price:       product.price,
+            stock:       product.stock,
+            category:    product.category,
+            image:       product.image
           })
       });
       navigate("/manage-products")
+
     } catch(error) {
         console.log(error)
     }
@@ -79,28 +78,28 @@ const UpdateProduct = () => {
          type="text"
          value={product.title} 
          onChange={handleChange}
-         />
+        />
         <h3>Description</h3>
         <input
          name="description" 
          type="text"
          value={product.description} 
          onChange={handleChange}
-         />
+        />
         <h3>Price</h3>
         <input
          name="price"
          type="text"
          value={product.price}
          onChange={handleChange}
-           />
+        />
         <h3>Stock</h3>
         <input
          name="stock"
          type="text"
          value={product.stock}
          onChange={handleChange}
-           />
+        />
         <h3>Category</h3>
         <input
          name="category" 

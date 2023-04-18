@@ -14,8 +14,6 @@ const ManageProducts = () => {
       setProducts(products)
       return products
 
-      // if(!response.ok) {
-      //   throw new Error('Could not fetch the data')} 
     } catch (error) {
       setDefaultResultOrder(error.message)
     }
@@ -26,26 +24,18 @@ const ManageProducts = () => {
     
   },[])
 
+  const deleteProduct =  async (id) =>{
+  try{
+    await fetch ('https://product-api-production-5f7f.up.railway.app/products/' + id, { 
+    method:'DELETE',
 
+  });
+    setProducts(products.filter(product => id != product['_id']));
 
-const deleteobj =  async (id) =>{
-try{
-  await fetch ('https://product-api-production-5f7f.up.railway.app/products/' + id, { 
-  method:'DELETE',
-
-});
-   setProducts(products.filter(product => id != product['_id']));
-
-  } catch(error){
-    console.log("problem occured")
+    } catch(error){
+      console.log(error)
+    }
   }
-    
-}
-
-
-
-
-
 
   return (
     <>
@@ -75,7 +65,7 @@ try{
                     <Link to={"/update-product/"+product['_id']} >
                       <button className='update' >Update</button>
                     </Link>
-                    <button onClick={() => { deleteobj(product['_id']) }} className='delete'>Delete</button>
+                    <button onClick={() => { deleteProduct(product['_id']) }} className='delete'>Delete</button>
                   </td>
                   {/* ^ Ska ersättas med routing Link */}
                 </tr>)

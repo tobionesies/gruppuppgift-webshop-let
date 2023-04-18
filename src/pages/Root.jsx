@@ -8,18 +8,31 @@ import { GlobalStyle, StyledSection } from '../components/styled/GlobalStyle'
 
 
 const Root = () => {
-  
+  const [cartToggle, setCartToggle]   = useState(false);
+  const [cartContent, setCartContent] = useState([])
 
-  const [cartToggle, setCartToggle] = useState(false);
-
+  const addToCart = (product) => {
+    console.log(product)
+    // setCartContent([
+    //   ...cartContent,
+    //   product
+    // ])
+    //   console.log(cartContent)
+  }
 
   return (
     <div>
       <GlobalStyle/>
-        <Header cartToggle={cartToggle} setCartToggle={setCartToggle}/>
-        <Cart />
+        <Header cartToggle={cartToggle} setCartToggle={setCartToggle} />
+         <Cart 
+            cartToggle={cartToggle} 
+            setCartToggle={setCartToggle} 
+            cartContent={cartContent}
+            setCartContent={setCartContent}
+          />
         <StyledSection>
-            <Outlet cartToggle={cartToggle} setCartToggle={setCartToggle}/>
+            {/* <Outlet cartToggle={cartToggle} setCartToggle={setCartToggle}/> */}
+            <Outlet addToCart={addToCart}/>
         </StyledSection>
         <Footer />
     </div>  
