@@ -15,15 +15,6 @@ import ManageProducts from './pages/admin/ManageProducts';
 import UpdateProduct from './pages/admin/UpdateProduct';
 import CreateProduct from './pages/admin/CreateProduct';
 
-const addToCart = (product) => {
-  console.log(product)
-  // setCartContent([
-  //   ...cartContent,
-  //   product
-  // ])
-  //   console.log(cartContent)
-}
-
 const router = createBrowserRouter([
   {
     path: "/",
@@ -32,7 +23,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Products addToCart={addToCart}/>,
+        element: <Products />,
       },
       {
         path: "/:id",
