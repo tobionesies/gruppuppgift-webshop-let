@@ -6,8 +6,6 @@ import { FaShoppingCart } from "react-icons/Fa";
 const Cart = ({cartToggle, setCartToggle, cartContent}) => {
   [cartToggle, setCartToggle]   = useState();
 
-  let nCart= [];
-
   const handleChange = (e) => {
     e.preventDefault();
     setCartToggle(!cartToggle)
@@ -15,12 +13,8 @@ const Cart = ({cartToggle, setCartToggle, cartContent}) => {
   }
 
   const total = cartContent.reduce((result, currentProduct) => {
-    return result += currentProduct.price * currentProduct.quantity;
+    return result += currentProduct.price;
   }, 0)
-
-  function checkAvailability(cartContent, id) {
-    return cartContent.some((itemID) => id === itemID);
-  }
 
   return (
     <>
@@ -45,18 +39,14 @@ const Cart = ({cartToggle, setCartToggle, cartContent}) => {
                 </tr>
               </thead>
               <tbody>
-
-                {cartContent.map((item) => console.log(cartContent.find(item.id)))}
               {
-                cartContent.map((item, key) =>
-                  item.id == key
-                    ? item.quantity += item.quantity
-                    : <tr key={item.id}>
-                       <td><img src={item.image} alt="" className='cartImage'/></td>
-                       <td>{item.title}</td>
-                       <td>{item.quantity}</td>
-                       <td>${item.price}</td>
-                     </tr>)
+                cartContent.map((item) =>
+                  <tr key={item.id}>
+                    <td><img src={item.image} alt="" className='cartImage'/></td>
+                    <td>{item.title}</td>
+                    <td>x{item.quantity}</td>
+                    <td>${item.price}</td>
+                  </tr>)
               }
               </tbody>
               <tfoot>

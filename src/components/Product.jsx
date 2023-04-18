@@ -9,14 +9,24 @@ const Product = (product, quantity, setQuantity) => {
   [quantity, setQuantity] = useState(1)
 
   const addToCart = (product) => {
-    // console.log(product)
-    setCartContent([
-      ...cartContent,
-      product
-    ])
-      console.log(cartContent)
-  }
 
+        const duplicate = cartContent.find(item => item.id === product.id);
+        if (duplicate) {
+          const updatedItem = {
+            ...duplicate, 
+            quantity: duplicate.quantity + product.quantity, 
+            price: duplicate.price + product.price 
+          }
+          const theUpdatedCart = cartContent.map(item => item.id === duplicate.id ? updatedItem : item)
+          setCartContent(theUpdatedCart)
+        } else {
+          setCartContent([
+            ...cartContent,
+            product
+          ])
+        }
+  }
+        
   const handleChange = (e) => {
       e.preventDefault();
       setQuantity(e.target.value)
