@@ -26,21 +26,10 @@ const Products = ({addToCart, testing}) => {
   useEffect(() => {
     fetchProducts();
   },[])
-
-
-
-  // const addToCart = (product) => {
-  //   setCartContent([
-  //     ...cartContent,
-  //     product
-  //   ])
-  //     console.log(cartContent)
-  // }
     
     return (
       <>
         <Body>
-          {testing}
           { products!=null 
               ? products.map((product) => 
                 <Product 
@@ -48,7 +37,7 @@ const Products = ({addToCart, testing}) => {
                   product={product}
                   quantity={quantity}
                   setQuantity={setQuantity}
-                  addToCart={() => {addToCart()}}
+                  addToCart={addToCart}
                   /> 
                )
               : <div>Error :c</div>
