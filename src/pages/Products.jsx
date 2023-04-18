@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import styled, { css } from 'styled-components'
 import { Link } from 'react-router-dom'
-// import "../components/Cart"
 import {Body, ProductElement, Button} from '../components/styled/StyledComponents';
 import { motion } from 'framer-motion'
 
@@ -19,9 +17,7 @@ const Products = () => {
       const products = await response.json();
       setProducts(products)
       return products
-
-      // if(!response.ok) {
-      //   throw new Error('Could not fetch the data')} 
+ 
     } catch (error) {
       setDefaultResultOrder(error.message)
     }
@@ -97,18 +93,12 @@ const Products = () => {
               ? products.map((product) => 
                 <ProductElement key={product['_id']}>
                   <motion.div
-                  
-                  transition={{
-                  duration:2,
-                  type:"spring",
-                  stiffness: 200
-                  }}
-
-                  whileHover={{
-                    scale:1.1,
-                  }}
-                    
-                  
+                    transition={{
+                      duration:2,
+                      type:"spring",
+                      stiffness: 200
+                    }}
+                    whileHover={{ scale:1.1 }}
                   >
                   <img src={product.image} alt="BILD" />
                   </motion.div>

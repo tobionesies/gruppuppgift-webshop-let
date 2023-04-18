@@ -10,7 +10,7 @@ import { GlobalStyle, StyledSection } from '../components/styled/GlobalStyle'
 const Root = () => {
   
 
-  const [cartToggle, setCartToggle] = useState(false);
+  const [cartToggle, setCartToggle]   = useState(false);
   const [cartContent, setCartContent] = useState([])
   console.log('cartToggle == '+cartToggle)
   console.log('cartContent == '+cartContent)

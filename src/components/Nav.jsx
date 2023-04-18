@@ -14,15 +14,14 @@ const Nav = ({cartToggle, setCartToggle, updateCartState}) => {
 // }
 
 useEffect(() => {
-  
 },[])
 
   return (
     <motion.nav
-     initial = {{ y:-50}}
-     animate = {{ y:0,}}
-      transition = {{ duration:1,type:"tween"}}
->
+      initial = {{ y:-50 }}
+      animate = {{ y:0 }}
+      transition = {{ duration:1,type:"tween" }}
+    >
       <Link to="/">Products</Link>
       <Link to="/manage-products">Admin</Link>
       <h2 className='cart-icon' onClick={(e) => {updateCartState(!cartToggle)}}>

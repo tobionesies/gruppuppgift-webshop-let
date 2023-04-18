@@ -6,12 +6,12 @@ import { StyledForm } from '../../components/styled/StyledForms';
 const CreateProduct = () => {
   const navigate = useNavigate()
   const [newProduct, setNewProduct] = useState({
-            title:'',
-            description: '',
-            price:undefined,
-            stock:undefined,
-            category:'',
-            image:''
+    title:'',
+    description: '',
+    price:undefined,
+    stock:undefined,
+    category:'',
+    image:''
   })
 
   const handleChange = (e) => {
@@ -19,7 +19,7 @@ const CreateProduct = () => {
     setNewProduct({
       ...newProduct,
       [e.target.name]: e.target.value
-  })
+    })
   }
 
   const handleSubmit = async (e) => {
@@ -32,12 +32,12 @@ const CreateProduct = () => {
         },
         body: JSON.stringify(
           {
-            title:newProduct.title,
-            description:newProduct.description,
-            price:newProduct.price,
-            stock:newProduct.stock,
-            category:newProduct.category,
-            image:newProduct.image
+            title:       newProduct.title,
+            description: newProduct.description,
+            price:       newProduct.price,
+            stock:       newProduct.stock,
+            category:    newProduct.category,
+            image:       newProduct.image
           })
       }); 
       navigate("/manage-products")
