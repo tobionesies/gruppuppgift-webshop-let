@@ -11,14 +11,14 @@ const Root = () => {
   const [cartToggle, setCartToggle]   = useState(false);
   const [cartContent, setCartContent] = useState([])
 
-  const addToCart = (product) => {
-    console.log(product)
-    // setCartContent([
-    //   ...cartContent,
-    //   product
-    // ])
-    //   console.log(cartContent)
-  }
+  // const addToCart = (product) => {
+  //   console.log(product)
+  //   // setCartContent([
+  //   //   ...cartContent,
+  //   //   product
+  //   // ])
+  //   //   console.log(cartContent)
+  // }
 
   return (
     <div>
@@ -32,7 +32,7 @@ const Root = () => {
           />
         <StyledSection>
             {/* <Outlet cartToggle={cartToggle} setCartToggle={setCartToggle}/> */}
-            <Outlet addToCart={addToCart}/>
+            <Outlet />
         </StyledSection>
         <Footer />
     </div>  
