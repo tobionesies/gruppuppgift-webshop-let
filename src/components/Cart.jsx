@@ -1,14 +1,6 @@
 import React, { useState } from 'react'
 import "../pages/Products"
 
-// export const getCart = () => {
-//   // const [cart, setCart] = useState([]);
-
-//   // const handleClick = (item) => {
-//   //   console.log(item)
-//   // }
-// }
-
 const Cart = (cartToggle, setCartToggle, cartContent, setCartContent) => {
   [cartToggle, setCartToggle]   = useState();
   [cartContent, setCartContent] = useState([])
