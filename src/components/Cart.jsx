@@ -3,7 +3,7 @@ import { Link, useOutletContext } from 'react-router-dom'
 import "../pages/Products"
 import { FaShoppingCart } from "react-icons/Fa";
 
-const Cart = ({cartToggle, setCartToggle, cartContent}) => {
+const Cart = ({cartToggle, setCartToggle, cartContent, setCartContent}) => {
   [cartToggle, setCartToggle]   = useState();
 
   const handleChange = (e) => {
@@ -15,6 +15,11 @@ const Cart = ({cartToggle, setCartToggle, cartContent}) => {
   const total = cartContent.reduce((result, currentProduct) => {
     return result += currentProduct.price;
   }, 0)
+
+
+const removeFromCart = (id) => {
+  setCartContent(cartContent.filter(item => id != item.id));
+}
 
   return (
     <>
@@ -36,6 +41,7 @@ const Cart = ({cartToggle, setCartToggle, cartContent}) => {
                   <th>Title</th>
                   <th>Quantity</th>
                   <th>Price</th>
+                  <th>Action</th>
                 </tr>
               </thead>
               <tbody>
@@ -46,6 +52,9 @@ const Cart = ({cartToggle, setCartToggle, cartContent}) => {
                     <td>{item.title}</td>
                     <td>x{item.quantity}</td>
                     <td>${item.price}</td>
+                    <td>
+                      <button onClick={() => { removeFromCart(item.id)}}>X</button>
+                    </td>
                   </tr>)
               }
               </tbody>
