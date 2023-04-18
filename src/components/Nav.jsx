@@ -1,20 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { FaShoppingCart } from "react-icons/Fa";
 
-
-const Nav = ({cartToggle, setCartToggle, updateCartState}) => {
-
- [cartToggle, setCartToggle] = useState(false);
-
-// const handleChange = (e) => {
-//   e.preventDefault();
-//   setCartToggle(!cartToggle)
-// }
-
-useEffect(() => {
-},[])
+const Nav = () => {
 
   return (
     <motion.nav
@@ -24,10 +12,6 @@ useEffect(() => {
     >
       <Link to="/">Products</Link>
       <Link to="/manage-products">Admin</Link>
-      <h2 className='cart-icon' onClick={(e) => {updateCartState(!cartToggle)}}>
-          <FaShoppingCart/>
-           (0 {cartToggle == true ? "true" : "false"})
-      </h2> 
     </motion.nav>
   )
 }
