@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import { useParams, useNavigate } from 'react-router-dom';
+import { Link, useParams, useNavigate } from 'react-router-dom';
 import { StyledUpdateForm } from '../../components/styled/StyledForms';
 
 
@@ -69,56 +69,60 @@ const UpdateProduct = () => {
   }
 
   return (
-    <div>
-      <StyledUpdateForm action="" onSubmit={handleSubmit} >
-        <h2>Update Product</h2>
-        <h3>Title</h3>
-        <input 
-         name="title" 
-         type="text"
-         value={product.title} 
-         onChange={handleChange}
-        />
-        <h3>Description</h3>
-        <input
-         name="description" 
-         type="text"
-         value={product.description} 
-         onChange={handleChange}
-        />
-        <h3>Price</h3>
-        <input
-         name="price"
-         type="text"
-         value={product.price}
-         onChange={handleChange}
-        />
-        <h3>Stock</h3>
-        <input
-         name="stock"
-         type="text"
-         value={product.stock}
-         onChange={handleChange}
-        />
-        <h3>Category</h3>
-        <input
-         name="category" 
-         type="text" 
-         value={product.category}
-         onChange={handleChange}
-         />
-         <h3>Image</h3>
-         <input
-         name="image" 
-         type="text" 
-         value={product.image}
-         onChange={handleChange}
-         />
-         <br />
-         <input type="submit" value="Submit"/>
-      </StyledUpdateForm>
-
-    </div>
+    <>
+      <div>
+        <Link to="/manage-products">Back</Link>
+      </div>
+      <div>
+        <StyledUpdateForm action="" onSubmit={handleSubmit} >
+          <h2>Update Product</h2>
+          <h3>Title</h3>
+          <input 
+          name="title" 
+          type="text"
+          value={product.title} 
+          onChange={handleChange}
+          />
+          <h3>Description</h3>
+          <input
+          name="description" 
+          type="text"
+          value={product.description} 
+          onChange={handleChange}
+          />
+          <h3>Price</h3>
+          <input
+          name="price"
+          type="text"
+          value={product.price}
+          onChange={handleChange}
+          />
+          <h3>Stock</h3>
+          <input
+          name="stock"
+          type="text"
+          value={product.stock}
+          onChange={handleChange}
+          />
+          <h3>Category</h3>
+          <input
+          name="category" 
+          type="text" 
+          value={product.category}
+          onChange={handleChange}
+          />
+          <h3>Image</h3>
+          <input
+          name="image" 
+          type="text" 
+          value={product.image}
+          onChange={handleChange}
+          />
+          <br />
+          <input type="submit" value="Submit"/>
+        </StyledUpdateForm>
+      </div>
+    </>
   )
 }
 

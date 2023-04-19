@@ -1,16 +1,16 @@
 
-h1{
+/* h1{
   color:black;
   font-size:36px;
-}
+} */
 
-.product-image{
+/* .product-image{
   max-width:30vw;
   max-height:40vw;
  margin-top:-450px;
  
 
-}
+} */
 
 .item-container{
   max-width:80%;
@@ -23,16 +23,16 @@ h1{
   flex-direction: column;
 }
 
-.descryption{
+/* .descryption{
   float:right;
   position:static;
   max-width:40%;
   height:auto;
   margin-left:54%;
   
-}
+} */
 
-.cart{
+/* .cart{
 margin-top:10px;
 display: block;
 padding:8px;
@@ -41,18 +41,18 @@ font-weight: 600;
 border-width: 2px;
 border-image: linear-gradient(to right, darkblue, rgb(150, 9, 9)) 1;
 
-}
+} */
 
-.input{
+/* .input{
   width:70%;
   border:1px solid black;
   padding:5px;
   border-radius: 5px;
-}
+} */
 
-p {
+/* p {
 font-size:22px;
-}
+} */
 
 .read-the-docs {
   color: #888;
