@@ -1,13 +1,42 @@
 import React , { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom';
+import { useParams, useOutletContext } from 'react-router-dom';
 import { StyledProduct } from '../components/styled/StyledProduct';
+
 
 
 const Productfunction = () => {
 
-  const [item, setItem] = useState([])
-  const params          = useParams();
+  const [cartContent, setCartContent]  = useOutletContext();
+  const [products, setProducts]        = useOutletContext();
+  const [quantity, setQuantity]        = useOutletContext()
+  const [item, setItem]                = useState([])
+  const params                         = useParams();
   
+
+  const addToCart = (product) => {
+
+    const duplicate = cartContent.find(item => item.id === product.id);
+    if (duplicate) {
+      const updatedItem = {
+        ...duplicate, 
+        quantity: duplicate.quantity + product.quantity, 
+        price: duplicate.price + product.price
+      }
+      console.log("undefined? "+duplicate.quantity)
+      const theUpdatedCart = cartContent.map(item => item.id === duplicate.id ? updatedItem : item)
+      setCartContent(theUpdatedCart)
+    } else {
+      setCartContent([
+        ...cartContent,
+        product
+      ])
+    }
+    console.log(product)
+    // console.log(products)
+
+}
+
+
   const fetchProducts = async () => {
     try {
       const response = await fetch ('https://product-api-production-5f7f.up.railway.app/products/' + params.id);
@@ -24,7 +53,7 @@ const Productfunction = () => {
   const price = "Price: "
   const lager = "In stock: "
   // const pack = "pc."
-  const besk = "Description: "
+  const beskrivning = "Description: "
   const cat = "Categories: "
 
   useEffect(() => {
@@ -39,7 +68,7 @@ const Productfunction = () => {
         <p><b>{price}</b> {valör}{item.price}</p>
         <input type="text"></input>
         <p>
-          <b>{besk}</b>
+          <b>{beskrivning}</b>
           <br/>
           {item.description}
         </p>
@@ -52,7 +81,13 @@ const Productfunction = () => {
           <br/>
           {item.category}
         </p>
-        <button>Add to Cart</button>
+        <button onClick={() => { addToCart({
+          id: item._id,
+          title: item.title,
+          image: item.image,
+          price: item.price,
+          quantity: quantity,
+        })}}>Add to Cart</button>
       </div>
     </StyledProduct>
    
