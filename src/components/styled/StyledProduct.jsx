@@ -5,7 +5,9 @@ export const StyledProduct = styled.div`
     flex-flow: row wrap;
     justify-content: space-evenly;
     margin: 50px auto;
-    width: 80%;
+    width: 50%;
+    
+    
 
 
     #description {
@@ -37,5 +39,6 @@ export const StyledProduct = styled.div`
     img {
         width: 330px;
         height: 400px;
+        border-radius: 10px;
     }
 `
