@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link, useOutletContext } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import "../pages/Products"
 import { FaShoppingCart } from "react-icons/Fa";
 
@@ -20,6 +20,8 @@ const Cart = ({cartToggle, setCartToggle, cartContent, setCartContent}) => {
 const removeFromCart = (id) => {
   setCartContent(cartContent.filter(item => id != item.id));
 }
+
+
 
   return (
     <>
@@ -61,6 +63,11 @@ const removeFromCart = (id) => {
               <tfoot>
                 <tr>
                   <td>Total: ${total}</td>
+                </tr>
+                <tr>
+                  <td>
+                    <button onClick={() => setCartContent([])}>Clear cart</button>
+                    </td>
                 </tr>
                 <tr>
                   <td><Link to="/Checkout">Checkout</Link></td>
