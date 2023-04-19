@@ -7,8 +7,8 @@ import Product from '../components/Product';
 
 const Products = ({addToCart, testing}) => {
 
-  // const [products, setProducts]       = useState()
-  const [products, setProducts]       = useOutletContext()
+  const [products, setProducts]       = useState()
+  // const [products, setProducts]       = useOutletContext()
   const [quantity, setQuantity]       = useOutletContext()
   const [cartContent, setCartContent] = useState([])
   // const [quantity, setQuantity]       = useState(1)

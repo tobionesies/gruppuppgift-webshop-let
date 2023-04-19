@@ -3,10 +3,11 @@ import {ProductElement, Button} from '../components/styled/StyledComponents';
 import { motion } from 'framer-motion'
 import { Link, useOutletContext } from 'react-router-dom'
 
-const Product = (product, quantity, setQuantity) => {
+const Product = (product) => {
   const [cartContent, setCartContent] = useOutletContext();
 
-  [quantity, setQuantity] = useState(1)
+  const [quantity, setQuantity] = useState(1)
+  
 
   const addToCart = (product) => {
 
@@ -57,7 +58,7 @@ const Product = (product, quantity, setQuantity) => {
         <p>In stock</p>
         <input 
           name="quantity" 
-          placeholder='1' 
+          // placeholder='1' 
           value={product.product.quantity} 
           type="text" 
           onChange={handleChange}
