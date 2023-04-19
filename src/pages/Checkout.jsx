@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useOutletContext } from 'react-router-dom';
+import { Link, useOutletContext } from 'react-router-dom';
 
 const Checkout = () => {
 const [cartContent, setCartContent] = useOutletContext();
@@ -34,42 +34,49 @@ const handleQuantity = (item, btn) => {
     })
   }
 
-
+console.log(cartContent)
   return (
-    <table>
-      <thead>
-        <tr>
-          <th></th>
-          <th>Title</th>
-          <th>Quantity</th>
-          <th>Price</th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      <tbody>
-      {
-        cartContent.map((item) =>
-          <tr key={item.id}>
-            <td><img src={item.image} alt="" className='cartImage'/></td>
-            <td>{item.title}</td>
-            <td>x{item.quantity}</td>
-            <td>${item.price}</td>
-            <td>
-              <button onClick={() => { handleQuantity(item, "minus") }}>-</button>
-              <button onClick={() => { handleQuantity(item, "plus") }}>+</button>
-            </td>
-            <td>
-              <button onClick={() => { removeFromCart(item.id)}}>X</button>
-            </td>
-          </tr>)
-      }
-      </tbody>
-      <tfoot>
-        <tr>
-          <td>Total: ${total}</td>
-        </tr>
-      </tfoot>
-    </table>
+    cartContent.length >= 1
+    ? <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Title</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+        {
+          cartContent.map((item) =>
+            <tr key={item.id}>
+              <td><img src={item.image} alt="" className='cartImage'/></td>
+              <td>{item.title}</td>
+              <td>x{item.quantity}</td>
+              <td>${item.price}</td>
+              <td>
+                <button onClick={() => { handleQuantity(item, "minus") }}>-</button>
+                <button onClick={() => { handleQuantity(item, "plus") }}>+</button>
+              </td>
+              <td>
+                <button onClick={() => { removeFromCart(item.id)}}>X</button>
+              </td>
+            </tr>)
+        }
+        </tbody>
+        <tfoot>
+          <tr>
+            <td>Total: ${total}</td>
+          </tr>
+        </tfoot>
+      </table>
+    : <div>
+        <h1>The cart is empty, go back and add some stuff.</h1>
+        <Link to="/">
+          <button>Go back</button>
+        </Link>
+      </div>
   )
 }
 

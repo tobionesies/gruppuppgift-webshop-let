@@ -9,7 +9,6 @@ const Cart = ({cartToggle, setCartToggle, cartContent, setCartContent}) => {
   const handleChange = (e) => {
     e.preventDefault();
     setCartToggle(!cartToggle)
-    console.log(cartToggle)
   }
 
   const total = cartContent.reduce((result, currentProduct) => {
@@ -25,7 +24,6 @@ const removeFromCart = (id) => {
   setCartContent(cartContent.filter(item => id != item.id));
 }
 
-console.log(cartContent)
 
 
   return (
