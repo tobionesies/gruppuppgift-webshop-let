@@ -21,6 +21,7 @@ const removeFromCart = (id) => {
   setCartContent(cartContent.filter(item => id != item.id));
 }
 
+console.log(cartContent)
 
 
   return (

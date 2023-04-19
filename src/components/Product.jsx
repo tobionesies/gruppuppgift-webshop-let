@@ -55,8 +55,18 @@ const Product = (product, quantity, setQuantity) => {
       <div className='info'>
         <h4>${product.product.price}</h4>
         <p>In stock</p>
-        <input name="quantity" placeholder='1' value={product.product.quantity} type="text" onChange={handleChange} />
-        <Link to={"/" + product.product['_id']}>Description</Link>
+        <input 
+          name="quantity" 
+          placeholder='1' 
+          value={product.product.quantity} 
+          type="text" 
+          onChange={handleChange}
+        />
+        <Link 
+          to={"/" + product.product['_id']} 
+          // product={product}
+          // quantity={quantity}
+        >Description</Link>
         <Button onClick={() => { addToCart({
           id: product.product._id,
           title: product.product.title,

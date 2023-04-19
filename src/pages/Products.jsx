@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useOutletContext } from 'react-router-dom'
 import {Body, ProductElement, Button} from '../components/styled/StyledComponents';
 import { motion } from 'framer-motion'
 import Product from '../components/Product';
@@ -7,9 +7,11 @@ import Product from '../components/Product';
 
 const Products = ({addToCart, testing}) => {
 
-  const [products, setProducts]       = useState()
+  // const [products, setProducts]       = useState()
+  const [products, setProducts]       = useOutletContext()
+  const [quantity, setQuantity]       = useOutletContext()
   const [cartContent, setCartContent] = useState([])
-  const [quantity, setQuantity]       = useState(1)
+  // const [quantity, setQuantity]       = useState(1)
 
   const fetchProducts = async () => {
     try {
