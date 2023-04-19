@@ -29,17 +29,17 @@ const removeFromCart = (id) => {
   return (
     <>
       {cartToggle != true
-      ? <h2 className='cart-icon' onClick={handleChange}>
+      ? <h2 id='cart-icon' onClick={handleChange}>
           <FaShoppingCart/>
           ({totalQuantity})
         </h2> 
       :   <>
-            <h2 className='cart-icon' onClick={handleChange}>
+            <h2 id='cart-icon' onClick={handleChange}>
               <FaShoppingCart/>
               ({totalQuantity})
             </h2> 
         <div>
-            <table className='cartTable'>
+            <table id='cartTable'>
               <thead>
                 <tr>
                   <th></th>

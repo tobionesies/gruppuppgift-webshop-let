@@ -3,6 +3,7 @@ import styled, {css} from 'styled-components'
 export const StyledHeader = styled.header`
 background-color: var(--Dark-gray);
 padding:10px 60px;
+display: flex;
 
 nav {
     display: flex;
@@ -28,7 +29,20 @@ nav {
         text-decoration: underline;
         color:#feffe8;
     }
+}
 
-   
+#cart-icon {
+    margin-left: 70%;
+    display: block;
+}
+
+#cartTable {
+    background-color: black;
+    position: absolute;
+    top: 35.5%;
+    left: 90.5%;
+    color: white;
+    transform: translate(-40%,-30%);
+    -ms-transform: translate(-50%,-50%);
 }
 `
