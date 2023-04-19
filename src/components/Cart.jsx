@@ -53,28 +53,27 @@ const removeFromCart = (id) => {
               {
                 cartContent.map((item) =>
                   <tr key={item.id}>
-                    <td><img src={item.image} alt="" className='cartImage'/></td>
+                    <td id="img-td"><img src={item.image} alt="" className='cartImage'/></td>
                     <td>{item.title}</td>
                     <td>x{item.quantity}</td>
                     <td>${item.price}</td>
                     <td>
-                      <button onClick={() => { removeFromCart(item.id)}}>X</button>
+                      <button onClick={() => { removeFromCart(item.id)}} id="x">X</button>
                     </td>
                   </tr>)
               }
               </tbody>
-              <tfoot>
+              <tfoot id="table-footer">
                 <tr>
-                  <td>Total: ${total}</td>
+                  <td id="total" colSpan={5}>Total: ${total}</td>
                 </tr>
                 <tr>
-                  <td>
-                    <button onClick={() => setCartContent([])}>Clear cart</button>
-                    </td>
+                  <td colSpan={5}id="buttons-td" >
+                  <button onClick={() => setCartContent([])} id="clear-btn">Clear cart</button>
+                  <Link to="/Checkout"><button id="checkout-btn">Checkout</button></Link>
+                  </td>
                 </tr>
-                <tr>
-                  <td><Link to="/Checkout">Checkout</Link></td>
-                </tr>
+               
               </tfoot>
             </table>
         </div>
