@@ -69,7 +69,7 @@ const Productfunction = () => {
         <input type="text"></input>
         <p>
           <b>{beskrivning}</b>
-          <br/>
+          
           {item.description}
         </p>
         <p>
@@ -78,7 +78,7 @@ const Productfunction = () => {
         </p>
         <p>
           <b>{cat}</b>
-          <br/>
+          
           {item.category}
         </p>
         <button onClick={() => { addToCart({
@@ -86,7 +86,7 @@ const Productfunction = () => {
           title: item.title,
           image: item.image,
           price: item.price,
-          quantity: quantity,
+          quantity: 1,
         })}}>Add to Cart</button>
       </div>
     </StyledProduct>

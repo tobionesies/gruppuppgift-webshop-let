@@ -6,8 +6,15 @@ padding:10px 60px;
 
 nav {
     display: flex;
-    gap: 40px;
-    justify-content: space-between;
+    gap: 20px;
+    margin-top: 10px;
+    /* justify-content: space-between; */
+
+    h1{
+        color: white;
+        font-size: 45px;
+        margin:0;
+    }
 
     a {
         font-size: 19px;
