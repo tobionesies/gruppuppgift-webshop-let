@@ -42,7 +42,7 @@ const Products = ({addToCart, testing}) => {
                   addToCart={addToCart}
                   /> 
                )
-              : <div>Error :c</div>
+              : <div></div>
           
           }
         </Body>

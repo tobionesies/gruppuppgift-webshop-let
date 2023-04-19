@@ -44,7 +44,6 @@ const UpdateProduct = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(product)
     try {
       await fetch(`https://product-api-production-5f7f.up.railway.app/products/${params.id}`, {
         method: 'PUT',

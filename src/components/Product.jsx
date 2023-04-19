@@ -18,7 +18,6 @@ const Product = (product) => {
             quantity: duplicate.quantity + product.quantity, 
             price: duplicate.price + product.price
           }
-          console.log("undefined? "+duplicate.quantity)
           const theUpdatedCart = cartContent.map(item => item.id === duplicate.id ? updatedItem : item)
           setCartContent(theUpdatedCart)
         } else {
@@ -30,7 +29,6 @@ const Product = (product) => {
   }
         
   const handleChange = (e) => {
-    console.log(e.target.value)
       e.preventDefault();
       setQuantity(e.target.value)
 

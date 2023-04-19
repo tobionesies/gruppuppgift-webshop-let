@@ -9,7 +9,6 @@ const Cart = ({cartToggle, setCartToggle, cartContent, setCartContent}) => {
   const handleChange = (e) => {
     e.preventDefault();
     setCartToggle(!cartToggle)
-    console.log(cartToggle)
   }
 
   const total = cartContent.reduce((result, currentProduct) => {
@@ -25,23 +24,22 @@ const removeFromCart = (id) => {
   setCartContent(cartContent.filter(item => id != item.id));
 }
 
-console.log(cartContent)
 
 
   return (
     <>
       {cartToggle != true
-      ? <h2 className='cart-icon' onClick={handleChange}>
+      ? <h2 id='cart-icon' onClick={handleChange}>
           <FaShoppingCart/>
           ({totalQuantity})
         </h2> 
       :   <>
-            <h2 className='cart-icon' onClick={handleChange}>
+            <h2 id='cart-icon' onClick={handleChange}>
               <FaShoppingCart/>
               ({totalQuantity})
             </h2> 
         <div>
-            <table className='cartTable'>
+            <table id='cartTable'>
               <thead>
                 <tr>
                   <th></th>
