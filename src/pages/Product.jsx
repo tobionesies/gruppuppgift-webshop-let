@@ -22,7 +22,6 @@ const Productfunction = () => {
         quantity: duplicate.quantity + product.quantity, 
         price: duplicate.price + product.price
       }
-      console.log("undefined? "+duplicate.quantity)
       const theUpdatedCart = cartContent.map(item => item.id === duplicate.id ? updatedItem : item)
       setCartContent(theUpdatedCart)
     } else {
@@ -31,8 +30,6 @@ const Productfunction = () => {
         product
       ])
     }
-    console.log(product)
-    // console.log(products)
 
 }
 
@@ -42,7 +39,6 @@ const Productfunction = () => {
       const response = await fetch ('https://product-api-production-5f7f.up.railway.app/products/' + params.id);
       const data     = await response.json();
       setItem(data)
-      console.log(data)
 
     } catch (error) {
       console.log(error)
