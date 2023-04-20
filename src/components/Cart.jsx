@@ -41,7 +41,7 @@ const removeFromCart = (id) => {
               <FaShoppingCart/>
               ({totalQuantity})
             </h2></div>
-        <div id="cartTable-div">
+        <div onClick={handleChange} id="cartTable-div">
             <table id='cartTable'>
               <thead>
                 <tr>
