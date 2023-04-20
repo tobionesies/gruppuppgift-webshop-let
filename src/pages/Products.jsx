@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useOutletContext } from 'react-router-dom'
-import {Body, ProductElement, Button} from '../components/styled/StyledComponents';
+import {Body, ProductElement, Button, StyledLoading} from '../components/styled/StyledComponents';
 import { motion } from 'framer-motion'
 import Product from '../components/Product';
 
@@ -31,21 +31,28 @@ const Products = ({addToCart}) => {
     
     return (
       <>
-        <Body>
-          { products!=null 
-              ? products.map((product) => 
+          <Body>
+            { products!=null 
+                ? products.map((product) => 
+                <motion.div
+                  animate={{ opacity: [0, 0.5, 0.75, 1] }}
+                  initial={{ opacity: [0, 0.5, 0.75, 1] }}
+                  transition={{
+                    duration:2
+                  }}>
                 <Product 
-                  key={product['_id']}
-                  product={product}
-                  quantity={quantity}
-                  setQuantity={setQuantity}
-                  addToCart={addToCart}
-                  /> 
-               )
-              : <div></div>
-          
-          }
-        </Body>
+                key={product['_id']}
+                product={product}
+                quantity={quantity}
+                setQuantity={setQuantity}
+                addToCart={addToCart}
+                /> 
+                </motion.div>
+                )
+                : <StyledLoading></StyledLoading>
+                
+              }
+          </Body>
       </>
   )
 }

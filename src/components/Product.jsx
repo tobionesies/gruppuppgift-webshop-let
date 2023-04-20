@@ -38,34 +38,23 @@ const Product = (product) => {
     }
 
   return (
-    <ProductElement  >
       <motion.div
         transition={{
           duration:2,
           type:"spring",
           stiffness: 200
         }}
-        whileHover={{ scale:1.1 }}
+        whileHover={{ scale:1.03 }}
       >
+    <ProductElement  >
       <img src={product.product.image} alt="BILD" />
-      </motion.div>
       <h3>{product.product.title}</h3>
       <i>{product.product.category}</i>
       <div className='info'>
         <h4>${product.product.price}</h4>
         <p>In stock</p>
-        {/* <input 
-          name="quantity" 
-          // placeholder='1' 
-          value={product.product.quantity} 
-          type="text" 
-          onChange={handleChange}
-        /> */}
         <Link 
-          to={"/" + product.product['_id']} 
-          // product={product}
-          // quantity={quantity}
-        >Description</Link>
+          to={"/" + product.product['_id']}>Description</Link>
         <Button onClick={() => { addToCart({
           id: product.product._id,
           title: product.product.title,
@@ -79,6 +68,7 @@ const Product = (product) => {
       </div>
       {/* ^ Ska ersättas med routing Link */}
     </ProductElement>
+          </motion.div>
   )
   
 }
