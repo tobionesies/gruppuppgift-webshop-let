@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { Link, useOutletContext } from 'react-router-dom';
+import { StyledCheckoutTable } from '../components/styled/StyledCheckout';
+import { StyledBackButton } from '../components/styled/StyledForms';
 
 const Checkout = () => {
 const [cartContent, setCartContent] = useOutletContext();
@@ -37,7 +39,7 @@ const handleQuantity = (item, btn) => {
 console.log(cartContent)
   return (
     cartContent.length >= 1
-    ? <table>
+    ? <StyledCheckoutTable>
         <thead>
           <tr>
             <th></th>
@@ -53,14 +55,14 @@ console.log(cartContent)
             <tr key={item.id}>
               <td><img src={item.image} alt="" className='cartImage'/></td>
               <td>{item.title}</td>
-              <td>x{item.quantity}</td>
+              <td>
+                <button id='minusBtn' onClick={() => { handleQuantity(item, "minus") }}>-</button>
+                  x{item.quantity}
+                <button id='plusBtn' onClick={() => { handleQuantity(item, "plus") }}>+</button>
+              </td>
               <td>${item.price}</td>
               <td>
-                <button onClick={() => { handleQuantity(item, "minus") }}>-</button>
-                <button onClick={() => { handleQuantity(item, "plus") }}>+</button>
-              </td>
-              <td>
-                <button onClick={() => { removeFromCart(item.id)}}>X</button>
+                <button id='x-btn' onClick={() => { removeFromCart(item.id)}}>X</button>
               </td>
             </tr>)
         }
@@ -70,11 +72,12 @@ console.log(cartContent)
             <td>Total: ${total}</td>
           </tr>
         </tfoot>
-      </table>
+        <Link to="/"><button onClick={() => { setCartContent([])}}>Get ya stuff!</button></Link>
+      </StyledCheckoutTable>
     : <div>
         <h1>The cart is empty, go back and add some stuff.</h1>
         <Link to="/">
-          <button>Go back</button>
+          <StyledBackButton>&#60; Back to store</StyledBackButton>
         </Link>
       </div>
   )

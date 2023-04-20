@@ -91,6 +91,10 @@ nav {
         background-color: transparent;
         border-radius: 5px;
     }
+    #x:hover{
+    color:white;
+    background-color: red;
+    }
 
     
     #total{
