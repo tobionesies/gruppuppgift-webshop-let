@@ -1,6 +1,8 @@
 import React , { useState, useEffect } from 'react'
 import { useParams, useOutletContext } from 'react-router-dom';
 import { StyledProduct } from '../components/styled/StyledProduct';
+import { StyledLoading } from '../components/styled/StyledComponents';
+import { motion } from 'framer-motion'
 
 
 
@@ -57,34 +59,45 @@ const Productfunction = () => {
   },[])
 
   return (
-    <StyledProduct>
-      <img src={item.image} id='product-image'></img>
-      <div id='description'>
-        <h1>{item.title}</h1>
-        <p><b>{price}</b> {valör}{item.price}</p>
-        <p>
-          <b>{beskrivning}</b>
-          
-          {item.description}
-        </p>
-        <p>
-          <b>{lager}</b>
-          {item.stock}
-        </p>
-        <p>
-          <b>{cat}</b>
-          
-          {item.category}
-        </p>
-        <button onClick={() => { addToCart({
-          id: item._id,
-          title: item.title,
-          image: item.image,
-          price: item.price,
-          quantity: 1,
-        })}}>Add to Cart</button>
-      </div>
-    </StyledProduct>
+    item==0
+    ? <StyledLoading className='loading'></StyledLoading>
+    :<motion.div
+      animate={{ y: 0, opacity: [0, 0, 0.5, 0.75, 1] }}
+      initial={{ y: -85, opacity: [0, 0, 0.5, 0.75, 1] }}
+      transition={{ 
+        duration: 1,
+        type: 'tween'
+      }}
+    >
+      <StyledProduct>
+        <img src={item.image} id='product-image'></img>
+        <div id='description'>
+          <h1>{item.title}</h1>
+          <p><b>{price}</b> {valör}{item.price}</p>
+          <p>
+            <b>{beskrivning}</b>
+            
+            {item.description}
+          </p>
+          <p>
+            <b>{lager}</b>
+            {item.stock}
+          </p>
+          <p>
+            <b>{cat}</b>
+            
+            {item.category}
+          </p>
+          <button onClick={() => { addToCart({
+            id: item._id,
+            title: item.title,
+            image: item.image,
+            price: item.price,
+            quantity: 1,
+          })}}>Add to Cart</button>
+        </div>
+      </StyledProduct>
+    </motion.div>
    
   )
 }

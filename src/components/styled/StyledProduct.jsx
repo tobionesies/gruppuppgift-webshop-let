@@ -36,9 +36,16 @@ export const StyledProduct = styled.div`
 
     }
 
+    #product-image {
+        border: none;
+        background-color: transparent;
+        box-shadow: none;
+    }
+
     img {
         width: 330px;
         height: 400px;
         border-radius: 10px;
     }
+
 `
