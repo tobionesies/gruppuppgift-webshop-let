@@ -62,7 +62,6 @@ const Productfunction = () => {
       <div id='description'>
         <h1>{item.title}</h1>
         <p><b>{price}</b> {valör}{item.price}</p>
-        <input type="text"></input>
         <p>
           <b>{beskrivning}</b>
           

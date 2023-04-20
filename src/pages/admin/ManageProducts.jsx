@@ -69,7 +69,7 @@ const ManageProducts = () => {
                   </td>
                   {/* ^ Ska ersättas med routing Link */}
                 </tr>)
-              : <div>Error :c</div>}
+              : <div></div>}
           </tbody>
         </table>
       </StyledManageProducts>
