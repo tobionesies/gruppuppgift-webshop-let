@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 import Product from '../components/Product';
 
 
-const Products = ({addToCart, testing}) => {
+const Products = ({addToCart}) => {
 
   const [products, setProducts]       = useState()
   // const [products, setProducts]       = useOutletContext()
