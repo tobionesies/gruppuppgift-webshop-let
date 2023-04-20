@@ -38,8 +38,10 @@ nav {
 }
 
 #cart-icon {
-    margin-left: 70%;
+    margin-left: 63%;
+    color: white;
     display: block;
+    // left: 75%;
 }
 
 
@@ -50,7 +52,7 @@ nav {
     border-top: 0px;
     position: absolute;
     top: 90px;
-    left: 80%;
+    left: 75%;
     color: black;
     padding: 5px;
     table-layout: fixed;
