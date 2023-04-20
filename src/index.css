@@ -3,6 +3,10 @@
   font-family: 'Quicksand';
 }
 
+button{
+  cursor: pointer;
+}
+
 #page-title{
   font-family: 'Righteous';
 }

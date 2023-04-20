@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { StyledForm } from '../../components/styled/StyledForms';
+import { StyledForm, StyledBackButton } from '../../components/styled/StyledForms';
 
 const CreateProduct = () => {
   const navigate = useNavigate()
@@ -48,7 +48,9 @@ const CreateProduct = () => {
   return (
     <>
       <div>
-        <Link to="/manage-products">Back</Link>
+        <Link to="/manage-products">
+          <StyledBackButton>&#60; Back</StyledBackButton>
+        </Link>
       </div>
     
       <StyledForm onSubmit={handleSubmit}>

@@ -55,6 +55,7 @@ export const StyledManageProducts = styled.div`
         border: var(--Dark-gray) 2px solid;
         border-radius: 5px;
         padding: 5px;
+        box-shadow: 2px 2px;
     }
 
     .create:hover{
