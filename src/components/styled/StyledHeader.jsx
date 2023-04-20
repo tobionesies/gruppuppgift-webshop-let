@@ -57,6 +57,7 @@ nav {
     padding: 5px;
     table-layout: fixed;
     width: auto;
+    z-index: 1;
     /* transform: translate(-40%,-30%);
     -ms-transform: translate(-50%,-50%); */
     min-height: 200px;
