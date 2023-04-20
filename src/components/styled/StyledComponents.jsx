@@ -17,6 +17,10 @@ background-color: var(--Baby-powder);
 padding: 20px 20px 20px 20px;
 /* margin-bottom: 20px; */
 
+#loading {
+  height: 1000px;
+}
+
 @media screen and (max-width: 1400px) and (min-width: 1024px)  {
     grid-template-columns: 1fr 1fr 1fr;
 }
@@ -41,7 +45,7 @@ border-radius: 20px;
 box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
 img{
-  max-width:100%
+  max-width:100%;
   align-content: center;
   margin: 10px auto;
   border: 1px solid white;
@@ -97,5 +101,10 @@ button:hover{
   color: var(--Baby-powder);
 }
 
+
+`
+
+export const StyledLoading = styled.div`  
+        height: 540px;
 
 `
