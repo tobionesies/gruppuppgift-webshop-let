@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import "../pages/Products"
 import { FaShoppingCart } from "react-icons/Fa";
 
+
 const Cart = ({cartToggle, setCartToggle, cartContent, setCartContent}) => {
   [cartToggle, setCartToggle]   = useState();
 
@@ -28,17 +29,19 @@ const removeFromCart = (id) => {
 
   return (
     <>
+      
+
       {cartToggle != true
-      ? <h2 id='cart-icon' onClick={handleChange}>
+      ? <div id="cart-div"><h2 id='cart-icon' onClick={handleChange}>
           <FaShoppingCart/>
           ({totalQuantity})
-        </h2> 
+        </h2></div>
       :   <>
-            <h2 id='cart-icon' onClick={handleChange}>
+            <div id="cart-div"><h2 id='cart-icon' onClick={handleChange}>
               <FaShoppingCart/>
               ({totalQuantity})
-            </h2> 
-        <div>
+            </h2></div>
+        <div id="cartTable-div">
             <table id='cartTable'>
               <thead>
                 <tr>

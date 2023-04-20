@@ -4,10 +4,20 @@ export const StyledHeader = styled.header`
 background-color: var(--Dark-gray);
 padding:10px 60px;
 display: flex;
-
 /* table, tfoot, th, td {
   border: 1px solid;
 } */
+
+h2 {
+    display:flex;
+    flex-wrap: nowrap;
+}
+
+td {
+    text-align: center;
+}
+
+
 
 
 
@@ -15,6 +25,7 @@ nav {
     display: flex;
     gap: 20px;
     margin-top: 10px;
+    width: auto;
     /* justify-content: space-between; */
 
     h1{
@@ -37,29 +48,37 @@ nav {
     }
 }
 
-#cart-icon {
-    margin-left: 63%;
-    color: white;
-    display: block;
-    // left: 75%;
+#cart-div {
+    width: 100%;
 }
 
+#cart-icon {
+    float:left;
+    margin-left: 95%;
+    color: white;
+    /* display: inline-block;  */
+}
 
+#cartTable-div{
+    display:flex;
+    justify-content:flex-end;
+    position: absolute;
+    width: 100%;
+    top:90px;
+    left: 0;  
+}
 
 #cartTable {
+    position:relative;
     background-color: #ffffff;
     border: solid 2px var(--Dark-gray);
     border-top: 0px;
-    position: absolute;
-    top: 90px;
-    left: 75%;
+    margin-left: 75%;
     color: black;
     padding: 5px;
     table-layout: fixed;
     width: auto;
     z-index: 1;
-    /* transform: translate(-40%,-30%);
-    -ms-transform: translate(-50%,-50%); */
     min-height: 200px;
     max-height: 600px;
     min-width: 342px;
@@ -72,11 +91,14 @@ nav {
         background-color: transparent;
         border-radius: 5px;
     }
+
     
     #total{
+        border-top: 1px solid gray;
         color: red;
         font-weight: 600;
-        
+        text-align: right;   
+        padding: 10px;
     }
 
 
@@ -93,19 +115,31 @@ nav {
         font-weight: 700;
         background-color: var(--Dark-gray);
         color: white;
-        margin-left: 140px;
-           
+        margin-left: 140px; 
     }
+    
+    #checkout-btn:hover{
+        color:orange;
+    }
+
+
 
     #clear-btn{
         border-radius: 10px;
         width: 100px;
-        border: none;
+        border: solid orange 2px;
         padding: 10px;
         font-weight: 700;
-        background-color: orange;
-        color: #141414;
+        background-color: transparent;
+        color: orange;
     }
+    #clear-btn:hover {
+        background-color: orange;
+        color: black;
+    }
+
+
+
  
 }
 
