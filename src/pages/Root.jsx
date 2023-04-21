@@ -11,27 +11,6 @@ const Root = () => {
   const [products, setProducts]       = useState()
   const [quantity, setQuantity]       = useState(1)
 
-
-//   const addToCart = (product) => {
-
-//     const duplicate = cartContent.find(item => item.id === product.id);
-//     if (duplicate) {
-//       const updatedItem = {
-//         ...duplicate, 
-//         quantity: duplicate.quantity + product.quantity, 
-//         price: duplicate.price + product.price
-//       }
-//       console.log("undefined? "+duplicate.quantity)
-//       const theUpdatedCart = cartContent.map(item => item.id === duplicate.id ? updatedItem : item)
-//       setCartContent(theUpdatedCart)
-//     } else {
-//       setCartContent([
-//         ...cartContent,
-//         product
-//       ])
-//     }
-// }
-
   return (
     <div>
       <GlobalStyle/>
@@ -48,10 +27,7 @@ const Root = () => {
                 products, setProducts,
                 quantity, setQuantity
               ]}
-
-              // addToCart={addToCart}
             />
-            {/* <Outlet /> */}
         </StyledSection>
         <Footer />
     </div>  

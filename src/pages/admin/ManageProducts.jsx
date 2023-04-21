@@ -12,6 +12,7 @@ const ManageProducts = () => {
       const response = await fetch ('https://product-api-production-5f7f.up.railway.app/products/')
       const products = await response.json();
       setProducts(products)
+      
       return products
 
     } catch (error) {
@@ -21,15 +22,14 @@ const ManageProducts = () => {
 
   useEffect(() => {
     fetchProducts();
-    
   },[])
 
-  const deleteProduct =  async (id) =>{
-  try{
-    await fetch ('https://product-api-production-5f7f.up.railway.app/products/' + id, { 
-    method:'DELETE',
+  const deleteProduct =  async (id) => {
+    try{
+      await fetch ('https://product-api-production-5f7f.up.railway.app/products/' + id, { 
+      method:'DELETE',
 
-  });
+    });
     setProducts(products.filter(product => id != product['_id']));
 
     } catch(error){
@@ -67,7 +67,6 @@ const ManageProducts = () => {
                     </Link>
                     <button onClick={() => { deleteProduct(product['_id']) }} className='delete'>Delete</button>
                   </td>
-                  {/* ^ Ska ersättas med routing Link */}
                 </tr>)
               : <div></div>}
           </tbody>

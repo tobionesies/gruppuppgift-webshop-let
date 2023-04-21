@@ -1,8 +1,6 @@
-import styled, {css} from 'styled-components'
+import styled from 'styled-components'
 
 export const StyledManageProducts = styled.div`
-
-    /* background-color: #c0c0c0; */
     padding: 20px 50px 50px 50px;
 
     table {
@@ -23,7 +21,6 @@ export const StyledManageProducts = styled.div`
     }
             
     th, tr {
-        /* border: solid #242424 2px; */
         padding: 10px;
     }
 
@@ -89,7 +86,5 @@ export const StyledManageProducts = styled.div`
         color: white;
         border: var(--Vermilion) 1px solid;
     }
-
-
 
 `

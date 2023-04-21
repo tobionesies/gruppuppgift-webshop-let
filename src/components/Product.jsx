@@ -7,7 +7,6 @@ const Product = (product) => {
   const [cartContent, setCartContent] = useOutletContext();
 
   const [quantity, setQuantity] = useState(1)
-  
 
   const addToCart = (product) => {
 
@@ -38,37 +37,35 @@ const Product = (product) => {
     }
 
   return (
-      <motion.div
-        transition={{
-          duration:2,
-          type:"spring",
-          stiffness: 200
-        }}
-        whileHover={{ scale:1.03 }}
-      >
-    <ProductElement  >
-      <img src={product.product.image} alt="BILD" />
-      <h3>{product.product.title}</h3>
-      <i>{product.product.category}</i>
-      <div className='info'>
-        <h4>${product.product.price}</h4>
-        <p>In stock</p>
-        <Link 
-          to={"/" + product.product['_id']}>Description</Link>
-        <Button onClick={() => { addToCart({
-          id: product.product._id,
-          title: product.product.title,
-          image: product.product.image,
-          price: product.product.price,
-          quantity: quantity,
-        })}}>
-            Add to cart
-        </Button>
-    
-      </div>
-      {/* ^ Ska ersättas med routing Link */}
-    </ProductElement>
-          </motion.div>
+    <motion.div
+      transition={{
+        duration:2,
+        type:"spring",
+        stiffness: 200
+      }}
+      whileHover={{ scale:1.03 }}
+    >
+      <ProductElement  >
+        <img src={product.product.image} alt="BILD" />
+        <h3>{product.product.title}</h3>
+        <i>{product.product.category}</i>
+        <div className='info'>
+          <h4>${product.product.price}</h4>
+          <p>In stock</p>
+          <Link to={"/" + product.product['_id']}>Description</Link>
+          <Button onClick={() => { addToCart({
+            id: product.product._id,
+            title: product.product.title,
+            image: product.product.image,
+            price: product.product.price,
+            quantity: quantity,
+          })}}>
+              Add to cart
+          </Button>
+  
+        </div>
+      </ProductElement>
+    </motion.div>
   )
   
 }
