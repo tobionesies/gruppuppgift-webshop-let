@@ -5,7 +5,6 @@ export const StyledFooter = styled.footer`
 background-color: var(--Dark-gray);
 padding: 40px 60px;
 height: 120px;
-/* margin-top: 20px; */
 margin: 0px 0px 150px 0px;
 
 .footerInfo{
@@ -19,8 +18,6 @@ margin: 0px 0px 150px 0px;
     color: white;
     flex-direction: row;
     gap: 70px;
-    
-    /* justify-content: space-evenly; */
 }
 
 b {
@@ -34,7 +31,6 @@ ul {
     padding: 0;
     margin: 0;
     width: 300px;
-    /* margin-right: 50px; */
 }
 
 li {

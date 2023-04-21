@@ -1,12 +1,9 @@
-import styled, {css} from 'styled-components'
+import styled from 'styled-components'
 
 export const StyledHeader = styled.header`
 background-color: var(--Dark-gray);
 padding:10px 60px;
 display: flex;
-/* table, tfoot, th, td {
-  border: 1px solid;
-} */
 
 h2 {
     display:flex;
@@ -26,7 +23,6 @@ nav {
     gap: 20px;
     margin-top: 10px;
     width: auto;
-    /* justify-content: space-between; */
 
     h1{
         color: white;
@@ -56,7 +52,6 @@ nav {
     float:left;
     margin-left: 95%;
     color: white;
-    /* display: inline-block;  */
 }
 
 #cartTable-div{
@@ -110,8 +105,6 @@ nav {
         margin: 0;
     }
 
-
-    
     #checkout-btn{
         border-radius: 10px;
         border: none;
@@ -126,8 +119,6 @@ nav {
         color:orange;
     }
 
-
-
     #clear-btn{
         border-radius: 10px;
         width: 100px;
@@ -141,10 +132,6 @@ nav {
         background-color: orange;
         color: black;
     }
-
-
-
- 
 }
 
 `

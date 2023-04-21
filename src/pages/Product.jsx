@@ -9,9 +9,7 @@ import { motion } from 'framer-motion'
 const Productfunction = () => {
 
   const [cartContent, setCartContent]  = useOutletContext();
-  const [products, setProducts]        = useOutletContext();
-  const [quantity, setQuantity]        = useOutletContext()
-  const [item, setItem]                = useState([])
+  const [item, setItem]                = useState([]);
   const params                         = useParams();
   
 
@@ -50,7 +48,6 @@ const Productfunction = () => {
   const valör = "$"
   const price = "Price: "
   const lager = "In stock: "
-  // const pack = "pc."
   const beskrivning = "Description: "
   const cat = "Categories: "
 

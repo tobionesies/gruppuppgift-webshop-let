@@ -15,7 +15,6 @@ grid-template-columns: 1fr 1fr 1fr 1fr;
 gap: 20px;
 background-color: var(--Baby-powder);
 padding: 20px 20px 20px 20px;
-/* margin-bottom: 20px; */
 
 #loading {
   height: 1000px;
