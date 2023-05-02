@@ -18,7 +18,7 @@ const UpdateProduct = () => {
 
   const fetchProduct = async () => {
     try {
-      const response = await fetch (`https://product-api-production-5f7f.up.railway.app/products/${params.id}`)
+      const response = await fetch (`https://product-api-production-728d.up.railway.app/products/${params.id}`)
       
       const product = await response.json();
       setProduct(product)
@@ -45,7 +45,7 @@ const UpdateProduct = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await fetch(`https://product-api-production-5f7f.up.railway.app/products/${params.id}`, {
+      await fetch(`https://product-api-production-728d.up.railway.app/products/${params.id}`, {
         method: 'PUT',
         headers: {
             "Content-Type": "application/json",

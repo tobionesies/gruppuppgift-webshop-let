@@ -25,7 +25,7 @@ const CreateProduct = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await fetch(`https://product-api-production-5f7f.up.railway.app/products/`, {
+      await fetch(`https://product-api-production-728d.up.railway.app/products/`, {
         method: 'POST',
         headers: {
             "Content-Type": "application/json",

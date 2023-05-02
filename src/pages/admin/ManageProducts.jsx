@@ -9,7 +9,7 @@ const ManageProducts = () => {
 
   const fetchProducts = async () => {
     try {
-      const response = await fetch ('https://product-api-production-5f7f.up.railway.app/products/')
+      const response = await fetch ('https://product-api-production-728d.up.railway.app/products/')
       const products = await response.json();
       setProducts(products)
       
@@ -26,7 +26,7 @@ const ManageProducts = () => {
 
   const deleteProduct =  async (id) => {
     try{
-      await fetch ('https://product-api-production-5f7f.up.railway.app/products/' + id, { 
+      await fetch ('https://product-api-production-728d.up.railway.app/products/' + id, { 
       method:'DELETE',
 
     });

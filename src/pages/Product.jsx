@@ -36,7 +36,7 @@ const Productfunction = () => {
 
   const fetchProducts = async () => {
     try {
-      const response = await fetch ('https://product-api-production-5f7f.up.railway.app/products/' + params.id);
+      const response = await fetch ('https://product-api-production-728d.up.railway.app/products/' + params.id);
       const data     = await response.json();
       setItem(data)
 
