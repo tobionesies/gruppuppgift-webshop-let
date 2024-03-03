@@ -4,7 +4,7 @@ import {StyledFooter} from './styled/StyledFooter'
 
 const Footer = () => {
   return (
-    <>
+    <div>
       <StyledFooter>
         <p className='footerInfo'><b>Solesoul</b> is brought to you by Team LET &#128151;</p>
         <div id="footer-content">
@@ -34,7 +34,7 @@ const Footer = () => {
           </ul>
         </div>
       </StyledFooter>
-    </>
+    </div>
   )
 }
 

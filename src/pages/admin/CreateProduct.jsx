@@ -46,7 +46,7 @@ const CreateProduct = () => {
     }}
 
   return (
-    <>
+    <div>
       <div>
         <Link to="/manage-products">
           <StyledBackButton>&#60; Back</StyledBackButton>
@@ -71,7 +71,7 @@ const CreateProduct = () => {
         <br />
         <input type="submit" className='submitButton' value='Create' />
       </StyledForm>
-    </>
+    </div>
   )
 }
 

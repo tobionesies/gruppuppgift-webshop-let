@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 const Nav = () => {
 
   return (
-    <>
+    <div>
     <motion.nav
       initial = {{ y:-50 }}
       animate = {{ y:0 }}
@@ -15,7 +15,7 @@ const Nav = () => {
       <Link to="/">Products</Link>
       <Link to="/manage-products">Admin</Link>
     </motion.nav>
-    </>
+    </div>
   )
 }
 

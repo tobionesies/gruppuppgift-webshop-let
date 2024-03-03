@@ -38,7 +38,7 @@ const ManageProducts = () => {
   }
 
   return (
-    <>
+    <div>
       <StyledManageProducts>
         <Link to="/create-product/">
           <button className='create'>Create product</button>
@@ -72,7 +72,7 @@ const ManageProducts = () => {
           </tbody>
         </table>
       </StyledManageProducts>
-    </>
+    </div>
   )
 }
 

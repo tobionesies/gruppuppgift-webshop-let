@@ -27,7 +27,7 @@ const Products = ({addToCart}) => {
   },[])
     
     return (
-      <>
+      <div>
           <Body>
             { products!=null 
                 ? products.map((product) => 
@@ -50,7 +50,7 @@ const Products = ({addToCart}) => {
                 
               }
           </Body>
-      </>
+      </div>
   )
 }
 
